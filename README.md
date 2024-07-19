@@ -21,6 +21,7 @@ cd Hamer
 pip install -e .[all]
 pip install -v -e third-party/ViTPose
 ```
+Notes: About the installation of hamer, please refer to https://github.com/geopavlakos/hamer
 ## Get Started
 First you should put your models as follow:
 ```
@@ -29,11 +30,9 @@ First you should put your models as follow:
    --controlnets #finetuned controlnets (mesh,depth,pose)
    --gate_network #applied in MoE module
    --hamer #models for extracting control conditions
-     --data
-     --hamer_ckpts
-        --checkpoints #put hamer.ckpt
-     --vitpose_ckpts
-        --vitpose+_huge #put wholebody.pth
+     --data #put mano model
+     --hamer_ckpts #put hamer.ckpt
+     --vitpose_ckpts #put wholebody.pth
    --vae #vae model
    --yolo #hand detector
 ```
@@ -87,3 +86,5 @@ python MoHE_train.py \
     --meta_json 'metadata.json' --seed 42 --epoch 100 --lr 0.001 --generate 'path for generated images by controlnet' \
     -- ground_truth 'path for ground_truth images'--output output
 ```
+## Acknowlegements
+- Our codebase builds heavily on [diffusers](https://github.com/huggingface/diffusers) and [hamer](https://github.com/geopavlakos/hamer)
