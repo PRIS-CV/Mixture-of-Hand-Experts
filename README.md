@@ -29,6 +29,11 @@ First you should put your models as follow:
    --controlnets #finetuned controlnets (mesh,depth,pose)
    --gate_network #applied in MoE module
    --hamer #models for extracting control conditions
+     --data
+     --hamer_ckpts
+        --checkpoints #put hamer.ckpt
+     --vitpose_ckpts
+        --vitpose+_huge #put wholebody.pth
    --vae #vae model
    --yolo #hand detector
 ```
